@@ -1,16 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-import axios from 'axios';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Contact from './pages/Contact';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+import Projet1 from './pages/Projet1';
+import Projet2 from './pages/Projet2';
+import Projet3 from './pages/Projet3';
+import Projet4 from './pages/Projet4';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      useEffect(() => {
-        axios.get("https://localhost:8003/api/maison")
-          .then((res) => console.log(res.data))
-      },[])
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projet-1" element={<Projet1 />} />
+        <Route path="/projet-2" element={<Projet2 />} />
+        <Route path="/projet-3" element={<Projet3 />} />
+        <Route path="/projet-1" element={<Projet4 />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
