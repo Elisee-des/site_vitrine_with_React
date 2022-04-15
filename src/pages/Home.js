@@ -1,9 +1,12 @@
 import React from 'react';
+import Mouse from '../components/Mouse';
+import Navigation from '../components/Navigation';
 
 const Home = () => {
     return (
         <div>
-            <h1>Home</h1>
+            <Mouse />
+            <Navigation />
         </div>
     );
 };
