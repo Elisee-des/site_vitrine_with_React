@@ -1,10 +1,19 @@
 import React from 'react';
+import Logo from '../components/Logo';
+import Navigation from '../components/Navigation';
+import Mouse from "../components/Mouse"
 
 const Projet1 = () => {
     return (
-        <div>
-            <h1>Projet1</h1>
-        </div>
+        <main>
+            <Mouse />
+            <div className="project"> 
+                <Navigation />
+                <Logo />
+
+                <button left={"/"} right={"projet-2"} />
+            </div>
+        </main>
     );
 };
 
