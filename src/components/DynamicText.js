@@ -20,21 +20,34 @@ const DynamicText = () => {
                 letter.remove();
             }, 2000)
 
-            const loop = () => {
-                setTimeout(() => {
+        }
+
+        const loop = () => {
+            setTimeout(() => {
+                if(wordIndex >= array.length){
+                    wordIndex = 0;
+                    letterIndex = 0;
+                    loop();
+                } else if (letterIndex < array[wordIndex].length) {
                     createLetter()
                     letterIndex++
-                }, 80)
-            }
-            loop();
+                    loop()   
+                }
+                else {
+                    letterIndex = 0;
+                    wordIndex++;
+                    setTimeout(loop, 2000)
+                }
+            }, 80)
         }
+        loop();
 
         
     }, [])
 
     return (
         <spam className="dynamic-text">
-            <span>Simply</span>
+            <span>simply</span>
             <span id="text-target"></span>
         </spam>
     );
