@@ -14,7 +14,7 @@ const Mouse = () => {
             link.addEventListener("mouseover", () => {
                 cursor.classList.add("hovered");
             });
-
+            
             link.addEventListener("mouseleave", () => {
                 cursor.style.transition = ".3s ease-out"
                 cursor.classList.remove("hovered");
