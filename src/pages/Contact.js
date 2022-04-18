@@ -1,11 +1,18 @@
 import React from 'react';
+import ContactForm from '../components/ContactForm';
+import Logo from '../components/Logo';
+import Navigation from '../components/Navigation';
 
-const Contact = () => {
+const Projet1 = () => {
     return (
-        <div>
-            <h1>Contact</h1>
-        </div>
+        <main>
+            <div className="contact"> 
+                <Navigation />
+                <Logo />
+                <ContactForm />
+            </div>
+        </main>
     );
 };
 
-export default Contact;
+export default Projet1;
