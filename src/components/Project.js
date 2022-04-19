@@ -1,5 +1,6 @@
+import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
-import { projectsData } from "../data/projectsData"
+import { projectsData } from "../data/projectsData";
 
 const Project = ({ projetcNumber }) => {
     const [currentProjects] = useState(projectsData[projetcNumber]);
@@ -14,7 +15,7 @@ const Project = ({ projetcNumber }) => {
 
     },[])
     return (
-        <div className="div project-main">
+        <motion.div className="div project-main">
             <div className="project-content">
                 <h1>{currentProjects.title}</h1>
                 <p>{currentProjects.date}</p>
@@ -42,7 +43,7 @@ const Project = ({ projetcNumber }) => {
                     </div>
                 </div>
                 <span className="random-circle" style={{ left, top, transform: size }}></span>
-        </div>
+        </motion.div>
     );
 };
 
