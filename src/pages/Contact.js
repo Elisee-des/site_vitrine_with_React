@@ -4,11 +4,13 @@ import Logo from '../components/Logo';
 import Navigation from '../components/Navigation';
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Mouse from "../components/Mouse";
+import SocialNetwork from "../components/SocialNetwork";
+import Buttons from "../components/Buttons";
 
-const Projet1 = () => {
+const Contact = () => {
     return (
         <main>
-                <Mouse />
+            <Mouse />
             <div className="contact"> 
                 <Navigation />
                 <Logo />
@@ -30,10 +32,24 @@ const Projet1 = () => {
                             </CopyToClipboard>
                         </div>
                     </div>
+                    <div className="emails">
+                        <div className="content">
+                            <h4>email</h4>
+                            <CopyToClipboard text="se@gmail.com" className='hover'>
+                                <p style={{ cursor: "pointer" }} className="clipboard"
+                                onClick={()=> alert("Email copié")} >se@gmail.com</p>
+                            </CopyToClipboard>
+                        </div>
+                    </div>
+                    <SocialNetwork />
+                    <div className="credits">
+                        <p>Developpeur SE 2022</p>
+                    </div>
                 </div>
+                <Buttons left={"/projet-4"}/>
             </div>
         </main>
     );
 };
 
-export default Projet1;
+export default Contact;
