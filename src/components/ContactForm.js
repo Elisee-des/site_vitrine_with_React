@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import emailjs, { init } from '@emailjs/browser';
+import { motion } from 'framer-motion';
 init(process.env.REACT_APP_ID)
+
 
 const ContactForm = () => {
     const form = useRef();
@@ -8,7 +10,7 @@ const ContactForm = () => {
     const sendEmail = (e) => {
       e.preventDefault();
   
-      const formMess = document.querySelector(".form-message")
+      const formMess = document.querySelector(".form-message");
   
       emailjs.sendForm("service_4bdqtiz", "template_hgxq536", form.current, "KH2PQNfUY8NjGIBJY")
         .then((result) => {
