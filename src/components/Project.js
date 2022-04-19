@@ -13,9 +13,33 @@ const Project = ({ projetcNumber }) => {
         setTop(Math.floor(Math.random() * 200 + 150) + "px");
         setSize("scale(" + (Math.random() + 0.7) + ")");
 
-    },[])
+    },[]);
+
+    const variants = {
+        initial: {
+            opacity: 0,
+            transition: {duration: 0.5},
+            x: 200,
+        },
+        visible: {
+            opacity: 1,
+            x: 0,
+        },
+        exit: {
+            opacity: 0.4,
+            transition: { duration: 0.35 },
+            x: -800
+        }
+    }
+
+    const transition = {
+        ease: [0.03, 0.87, 0.73, 0.9],
+        duration:0.6
+    }
+
     return (
-        <motion.div className="div project-main">
+        <motion.div className="div project-main" initial="initial" animate="visible"
+        exit="exit" transition={transition} variants={variants}>
             <div className="project-content">
                 <h1>{currentProjects.title}</h1>
                 <p>{currentProjects.date}</p>
